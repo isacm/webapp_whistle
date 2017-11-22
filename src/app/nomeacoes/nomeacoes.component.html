@@ -3,12 +3,27 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Paper Dashboard Headings</h4>
-                        <p class="category">Created using <a href="https://www.google.com/fonts/specimen/Muli">Muli</a> Font Family</p>
+                        <h4 class="title">Jogos</h4>
                     </div>
-                    <div class="content">
+                    <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of tableData1.dataRows">
+                                <td *ngFor="let cell of row">{{cell}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                        <div class="typo-line">
+                    </div>
+
+                    <!--<div class="content">
+
+                         <div class="typo-line">
                             <h1><p class="category">Header 1</p>Paper Dashboard Heading </h1>
                         </div>
 
@@ -49,9 +64,7 @@
                             </p>
                         </div>
                         <div class="typo-line">
-                            <!--
-                             there are also "text-info", "text-success", "text-warning", "text-danger" clases for the text
-                             -->
+
                             <p class="category">Coloured Text</p>
                             <p class="text-primary">
                                 Text Primary - Light Bootstrap Table Heading and complex bootstrap dashboard you've ever seen on the internet.
@@ -72,12 +85,22 @@
 
                         <div class="typo-line">
                             <h2><p class="category">Small Tag</p>Header with small subtitle <br><small>".small" is a tag for the headers</small> </h2>
-                        </div>
+                        </div> 
 
 
-                    </div>
+                    </div>-->
+
                 </div>
-            </div>
+                
 
         </div>
+        <!-- <div class="col-md-6">
+        <div class="card">
+                    <div class="header">
+                        <h4 class="title">Árbitros</h4>
+                    </div>
+                    <div class="content">
+                    </div>
+            </div>
+        </div> -->
     </div>

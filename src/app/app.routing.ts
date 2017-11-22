@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserComponent } from './user/user.component';
 import { TableComponent } from './table/table.component';
-import { TypographyComponent } from './typography/typography.component';
+import { NomeacoesComponent } from './nomeacoes/nomeacoes.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -28,8 +28,8 @@ export const AppRoutes: Routes = [
         component: TableComponent
     },
     {
-        path: 'typography',
-        component: TypographyComponent
+        path: 'nomeacoes',
+        component: NomeacoesComponent
     },
     {
         path: 'icons',
