@@ -3,8 +3,26 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Striped Table</h4>
-                    <p class="category">Here is a subtitle for this table</p>
+                    <div class="col-md-6">
+                        <h4 class="title">Lista Árbitros</h4>
+                        <p class="category">Here is a subtitle for this table</p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-group-sm">
+                            <div class="col-md-4 control-label" for="sm">Pesquisa</div>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button 
+                            class="btn btn-default btn-block"
+                            routerLink="/user"
+                        >
+                            Adicionar Árbitro
+                        </button>                    
+                    </div>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-striped">
@@ -19,13 +37,12 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
 
 
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <div class="card card-plain">
                 <div class="header">
                     <h4 class="title">Table on Plain Background</h4>
@@ -46,6 +63,6 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
