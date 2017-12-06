@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UserComponent } from './user/user.component';
-import { TableComponent } from './table/table.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ArbitroComponent } from './arbitros/arbitros.component';
 import { NomeacoesComponent } from './nomeacoes/nomeacoes.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
@@ -20,12 +20,12 @@ export const AppRoutes: Routes = [
         component: DashboardComponent
     },
     {
-        path: 'user',
-        component: UserComponent
+        path: 'perfil',
+        component: PerfilComponent
     },
     {
-        path: 'table',
-        component: TableComponent
+        path: 'arbitros',
+        component: ArbitroComponent
     },
     {
         path: 'nomeacoes',

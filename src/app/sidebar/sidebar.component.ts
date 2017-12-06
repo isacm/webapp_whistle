@@ -11,8 +11,8 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: 'dashboard', title: 'Dashboard',  icon: 'ti-panel', class: '' },
-    { path: 'user', title: 'User Profile',  icon:'ti-user', class: '' },
-    { path: 'table', title: 'Table List',  icon:'ti-view-list-alt', class: '' },
+    { path: 'perfil', title: 'Perfil',  icon:'ti-user', class: '' },
+    { path: 'arbitros', title: 'Árbitros',  icon:'ti-view-list-alt', class: '' },
     { path: 'nomeacoes', title: 'Nomeações',  icon:'ti-hand-point-right', class: '' },
     // { path: 'icons', title: 'Icons',  icon:'ti-pencil-alt2', class: '' },
     // { path: 'maps', title: 'Maps',  icon:'ti-map', class: '' },
