@@ -1,0 +1,147 @@
+.whst-table {
+    $table-height: 40px;
+    $border: 1px;
+    $actions-position: 2px;
+    $table-padding: 10px;
+    $pagination-padding: 4px 10px;
+    $border-radius: 4px;
+    
+    &.-multi-line {
+        .datatable-body-row .datatable-body-cell-label {
+            white-space: normal;
+            text-overflow: unset;
+            line-height: normal;
+            height: 100px;
+        }
+    }
+
+    .datatable-header {
+        @include padding(null $table-padding);
+
+        border-bottom: $border solid $light-gray;
+        font-weight: $font-bold;
+    }
+
+    .datatable-body-row {
+        border-bottom: $border solid $light-gray;
+
+        &.datatable-row-odd {
+            background-color: $dark-gray;
+        }
+
+        .datatable-body-cell {
+            line-height: $table-height;
+        }
+
+        .datatable-body-cell-label {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .datatable-row-center {
+            @include padding(null $table-padding);
+        }
+    }
+
+    .datatable-footer {
+        @include margin($space10 null null);
+
+        .datatable-footer-inner {
+            .datatable-pager {
+                .pager {
+                    li {
+                        display: inline;
+                    }
+                }
+            }
+        }
+    }
+
+    .pager {
+        li {
+            @include font-size($font10, $line14);
+
+            &:first-child {
+                a {
+                    border-top-left-radius: $border-radius;
+                    border-bottom-left-radius: $border-radius;
+                }
+            }
+
+            &:last-child {
+                a {
+                    border-top-right-radius: $border-radius;
+                    border-bottom-right-radius: $border-radius;
+                }
+            }
+
+            &.disabled {
+                a {
+                    opacity: .75;
+                }
+            }
+
+            &.active {
+                a {
+                    background-color: $light-gray;
+                }
+            }
+
+            &:not(.pages) {
+                font-family: serif;
+            }
+
+            > a {
+                @include margin(null null null (-$border));
+                @include padding($pagination-padding);
+
+                float: left;
+                transition: opacity $trans3, background-color $trans3;
+                border-radius: 0;
+            }
+        }
+
+        .datatable-icon-prev {
+            @extend %table-icon-properties;
+
+            &::before {
+                content: "<<";
+            }
+        }
+
+        .datatable-icon-left {
+            @extend %table-icon-properties;
+
+            &::before {
+                content: "<";
+            }
+        }
+
+        .datatable-icon-right {
+            @extend %table-icon-properties;
+
+            &::before {
+                content: ">";
+            }
+        }
+
+        .datatable-icon-skip {
+            @extend %table-icon-properties;
+
+            &::before {
+                content: ">>";
+            }
+        }
+    }
+
+    .table-actions {
+        @include font-size(0, null);
+        @include position(relative, -$actions-position null null);
+    }
+
+    .empty-row {
+        line-height: $table-height;
+    }
+}

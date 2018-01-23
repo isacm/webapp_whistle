@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ArbitroComponent } from './arbitros/arbitros.component';
+import { RefereeComponent } from './referee/referee.component';
 import { NomeacoesComponent } from './nomeacoes/nomeacoes.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
@@ -24,8 +24,8 @@ export const AppRoutes: Routes = [
         component: PerfilComponent
     },
     {
-        path: 'arbitros',
-        component: ArbitroComponent
+        path: 'referee',
+        component: RefereeComponent
     },
     {
         path: 'nomeacoes',

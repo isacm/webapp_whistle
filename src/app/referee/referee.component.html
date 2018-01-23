@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="title">Lista Árbitros</h4>
+                    </div>                   
+                    
+                    <div class="col-md-3">                
+                        <div class="whst-ibox ibox">
+                            <div class="ibox-content">
+                                <form
+                                    class="whst-form form-horizontal"
+                                    [formGroup]="searchForm"
+                                    novalidate
+                                    role="form"
+                                >         
+                                    <div class="whst-input-search">
+                                        <whst-input
+                                            class="whst-block form-field-block"
+                                            type="text"
+                                            label= "Pesquisa"
+                                            placeholder="Nome"
+                                            [group]="searchForm"
+                                            name="name"
+                                        ></whst-input>
+                                    </div>                                           
+                                </form>
+                            </div>
+                        </div>    
+                    </div>            
+                    <div class="col-md-3">
+                        <button 
+                            class="btn btn-default btn-block"
+                            routerLink="/perfil"
+                        >
+                            Adicionar Árbitro
+                        </button>                    
+                    </div>
+                </div>
+                <br>
+                <br> 
+                <!-- <div class="whst-ibox"> -->
+                    <ngx-datatable
+                        class="material"
+                        columnMode="force"
+                        [rows]="referees"
+                        [rowHeight]="40"
+                        [limit]="limit"
+                        [footerHeight]="50"
+                    >
+                        <ngx-datatable-column prop="name">
+                            <ng-template ngx-datatable-header-template>
+                                Nome 
+                            </ng-template>
+                        </ngx-datatable-column>                         
+                        <ngx-datatable-column prop="category">
+                            <ng-template ngx-datatable-header-template>
+                                Categoria
+                            </ng-template>
+                        </ngx-datatable-column>
+                        <ngx-datatable-column prop="address">
+                            <ng-template ngx-datatable-header-template>
+                                Morada
+                            </ng-template>
+                        </ngx-datatable-column>
+                    </ngx-datatable>                
+                <!-- </div>                -->
+            </div>
+        </div>
+    </div>
+</div>  
+
+            

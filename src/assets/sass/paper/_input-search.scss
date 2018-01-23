@@ -1,0 +1,19 @@
+.whst-input-search {
+    $icon-pos: 2px;
+    $icon-padding: 8px;
+    $icon-width: 38px;
+
+    @include position(relative, null);
+
+    .form-control {
+        @include padding(null $icon-width null null);
+    }
+
+    .search-icon {
+        @include position(absolute, null $icon-pos $icon-pos null);
+        @include padding($icon-padding);
+
+        width: $icon-width;
+        border: 0;
+    }
+}

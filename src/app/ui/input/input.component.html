@@ -1,0 +1,22 @@
+<div
+    class="form-group m-b-none"
+    [formGroup]="group"    
+>
+    <label class="col-sm-3 control-label" [attr.for]="name">
+        {{ label }}        
+    </label>
+
+    <div class="col-xs-12 col-sm-9 input-field">
+        <input
+            class="form-control"
+            [attr.id]="name"
+            [type]="type"
+            [formControlName]="name"
+            [textMask]="maskOptions"
+            [placeholder]="placeholder"
+        />
+        <span [hidden]="!isInvalid()" class="help-block m-b-none error">
+            {{ getErrorMessage() }}
+        </span>
+    </div>
+</div>

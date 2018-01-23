@@ -12,19 +12,29 @@ import { NguiMapModule} from '@ngui/map';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ArbitroComponent } from './arbitros/arbitros.component';
+import { RefereeComponent } from './referee/referee.component';
 import { NomeacoesComponent } from './nomeacoes/nomeacoes.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http'
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TextMaskModule } from 'angular2-text-mask';
+import { InputComponent } from './ui/input/input.component';
+
+import { HTTPService } from './utils/http/http.service';
+import { ApiUrlsService } from './utils/api-urls/api-urls.service';
+import { RefereeService } from './referee/service/referee.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    InputComponent,
     PerfilComponent,
-    ArbitroComponent,
+    RefereeComponent,
     NomeacoesComponent,
     IconsComponent,
     MapsComponent,
@@ -33,15 +43,24 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    NgxDatatableModule,
     RouterModule.forRoot(AppRoutes),
     SidebarModule,
     NavbarModule,
     FooterModule,
     FixedPluginModule,
+    ReactiveFormsModule,
+    TextMaskModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY'})
 
   ],
-  providers: [],
+  providers: [
+    HTTPService,
+    ApiUrlsService,
+    RefereeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

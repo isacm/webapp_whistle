@@ -1,0 +1,35 @@
+
+.whst-ibox {
+    $ibox-padding: 20px 10px;
+    padding-left: 15px;
+
+    .ibox-header {
+        @include padding($ibox-padding);
+    }
+
+    .header-title {
+        @include font-size($font24, $line34);
+
+        font-weight: $font-light;
+    }
+
+    .ibox-title {
+        @include font-size($font14, null);
+
+        font-weight: $font-bold;
+    }
+
+    .whst-refresh {
+        position: absolute;
+        top: 29px;
+        right: 35px;
+
+        > * {
+            display: inline-block;
+        }
+
+        .sk-spinner-wave div {
+            background-color: $dark-gray;
+        }
+    }
+}

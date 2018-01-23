@@ -14,6 +14,17 @@
 
  */
 
+// New 
+@import '../../node_modules/@swimlane/ngx-datatable/release/index.css';
+@import '../../node_modules/@swimlane/ngx-datatable/release/assets/icons.css';
+@import '../../node_modules/@swimlane/ngx-datatable/release/datatable.css';
+
+@import "paper/table";
+@import "paper/form";
+@import "paper/helpers";
+@import "paper/ibox";
+@import "paper/input-search";
+
 @import "paper/variables";
 @import "paper/mixins";
 
@@ -40,3 +51,5 @@
 @import "paper/responsive";
 
 @import "paper/plugins/fixed-plugin";
+
+
