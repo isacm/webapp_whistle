@@ -15,14 +15,24 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let row of tableData1.dataRows">
-                                <td *ngFor="let cell of row">{{cell}}</td>
+                                <td *ngFor="let cell of row; let i = index">
+                                    <div *ngIf="i!=4"> {{cell}} </div>
+                                    <div *ngIf="i===4">
+                                            <ng-select
+                                                [multiple]="true"
+                                                [allowClear]="true"
+                                                [items]="refereesNames"
+                                                placeholder="Nenhum árbitro selecionado">
+                                            </ng-select>
+                                        </div>
+                                </td>
                             </tr>
                             
+
                         </tbody>
                     </table>
                     
                     </div>
-                    <button on-click="preenche()">click</button>
                     <!--<div class="content">
 
                          <div class="typo-line">

@@ -28,7 +28,7 @@ import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
 import { RefereeService } from './referee/service/referee.service';
 import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
-
+import { SelectModule } from 'ng2-select';
 
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
     FixedPluginModule,
     ReactiveFormsModule,
     TextMaskModule,
+    SelectModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY'})
 
   ],
