@@ -24,5 +24,22 @@ export class ApiUrlsService {
         ),
     }
 
+    public GAME: any = {
+        getAll: (sort?: string): string => (
+            `${ ApiUrlsService.API_URL }/Games?${sort ? 'sort=' + sort : ''}`
+        ),
+        getOne: (id: string): string => (
+            `${ ApiUrlsService.API_URL }/Games/${id}`
+        ),
+        create: (): string => (
+            `${ ApiUrlsService.API_URL }/Games`
+        ),
+        update: (id): string => (
+            `${ ApiUrlsService.API_URL }/Games/${id}`
+        ),
+        delete: (id): string => (
+            `${ ApiUrlsService.API_URL }/Games/${id}`
+        ),
+    }
 
 }

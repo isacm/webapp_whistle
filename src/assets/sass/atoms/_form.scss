@@ -1,0 +1,49 @@
+.whst-form {
+    $form-inline-margin: 15px;
+
+    .form-field {
+        &:not(:last-child) {
+            // @include margin(null null $space10);
+            margin:(null null $space10);
+
+            @media (min-width: 768px) {
+                // @include margin(null null $space20);
+                margin:(null null $space20);
+            }
+        }
+    }
+
+    .form-field-xs {
+        @media (max-width: 767px) {
+            // @include margin(null null $space20);
+            margin:(null null $space20);
+        }
+    }
+
+    .label-alt {
+        font-weight: $font-regular;
+        text-align: left;
+    }
+
+    .form-field-block {
+        .control-label {
+            // @include padding(0 null null);
+            // @include margin(null null $space5);
+            padding:(0 null null);
+            margin:(null null $space5);
+            width: auto;
+        }
+
+        .pdo-select,
+        .input-field {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.whst-form-login {
+    .actions {
+        // @include margin($space30 null null);
+        margin:($space30 null null);
+    }
+}

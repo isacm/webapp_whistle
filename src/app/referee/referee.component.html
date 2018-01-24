@@ -9,9 +9,9 @@
                     
                     <div class="col-md-3">                
                         <div class="whst-ibox ibox">
-                            <div class="ibox-content">
+                            <div class="ibox-content"><!-- whst-form form-horizontal-->
                                 <form
-                                    class="whst-form form-horizontal"
+                                    class=""
                                     [formGroup]="searchForm"
                                     novalidate
                                     role="form"
@@ -41,32 +41,55 @@
                 </div>
                 <br>
                 <br> 
-                <!-- <div class="whst-ibox"> -->
-                    <ngx-datatable
-                        class="material"
-                        columnMode="force"
-                        [rows]="referees"
-                        [rowHeight]="40"
-                        [limit]="limit"
-                        [footerHeight]="50"
-                    >
-                        <ngx-datatable-column prop="name">
-                            <ng-template ngx-datatable-header-template>
-                                Nome 
-                            </ng-template>
-                        </ngx-datatable-column>                         
-                        <ngx-datatable-column prop="category">
-                            <ng-template ngx-datatable-header-template>
-                                Categoria
-                            </ng-template>
-                        </ngx-datatable-column>
-                        <ngx-datatable-column prop="address">
-                            <ng-template ngx-datatable-header-template>
-                                Morada
-                            </ng-template>
-                        </ngx-datatable-column>
-                    </ngx-datatable>                
-                <!-- </div>                -->
+                <div class="whst-ibox">
+                    <div class="ibox-content">
+                        <ngx-datatable
+                            class="whst-table"
+                            columnMode="force"
+                            [rows]="referees"
+                            [rowHeight]="40"
+                            [limit]="limit"
+                            [footerHeight]="50"
+                        >
+                            <ngx-datatable-column prop="name">
+                                <ng-template ngx-datatable-header-template>
+                                    Nome 
+                                </ng-template>
+                            </ngx-datatable-column>                         
+                            <ngx-datatable-column prop="category">
+                                <ng-template ngx-datatable-header-template>
+                                    Categoria
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column prop="address">
+                                <ng-template ngx-datatable-header-template>
+                                    Morada
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column prop="id" sortable=false>
+                                <ng-template ngx-datatable-header-template>
+                                    Eliminar
+                                </ng-template>
+                                <ng-template let-value="value" ngx-datatable-cell-template>
+                                    <!-- <div class="table-actions">
+                                        <a
+                                            class="pdo-button btn btn-xs btn-default"
+                                            [routerLink]="['..', value, 'edit']"
+                                        >
+                                            {{ 'common.operations.edit' | translate }}
+                                        </a> -->
+                                        <button
+                                            class="btn btn-xs btn-default"
+                                            
+                                        >
+                                            Eliminar
+                                        </button>
+                                    <!-- </div> -->
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>                
+                    </div>
+                </div>               
             </div>
         </div>
     </div>

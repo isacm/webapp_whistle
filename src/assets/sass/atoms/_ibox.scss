@@ -1,0 +1,63 @@
+
+.whst-ibox {
+    $ibox-padding: 20px 10px;
+    padding-left: 15px;
+
+    .ibox-header {
+        padding:20px 10px;
+    }
+
+    .header-title {
+        @include font-size($font24, $line34);
+
+        font-weight: $font-light;
+    }
+
+    .ibox-title {
+        @include font-size($font14, null);
+
+        font-weight: $font-bold;
+    }
+
+    .whst-refresh {
+        position: absolute;
+        top: 29px;
+        right: 35px;
+
+        > * {
+            display: inline-block;
+        }
+
+        .sk-spinner-wave div {
+            background-color: $dark-gray;
+        }
+    }
+
+    .whst-ibox-fixed-m {
+        $content-padding-mobile: 20px 15px;
+
+        @media (max-width: $screen-xs-max) {
+            // @include position(fixed, null 0 0);
+
+            visibility: visible;
+            width: 100%;
+            transform: none;
+            transition: transform $trans4, visibility $trans4;
+            will-change: transform;
+        }
+
+        body.mini-navbar & {
+            @media (max-width: $screen-xs-max) {
+                visibility: hidden;
+                transform: translateY(100%);
+                transition: transform $trans4, visibility $trans4;
+            }
+        }
+
+        .ibox-content {
+            @media (max-width: $screen-xs-max) {
+                // @include padding($content-padding-mobile);
+            }
+        }
+    }
+}

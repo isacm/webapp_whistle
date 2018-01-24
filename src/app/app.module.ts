@@ -27,6 +27,8 @@ import { InputComponent } from './ui/input/input.component';
 import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
 import { RefereeService } from './referee/service/referee.service';
+import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { RefereeService } from './referee/service/referee.service';
   providers: [
     HTTPService,
     ApiUrlsService,
-    RefereeService
+    RefereeService,
+    NomeacoesService,
+    
   ],
   bootstrap: [AppComponent]
 })

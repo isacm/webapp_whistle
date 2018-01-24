@@ -260,3 +260,80 @@ $sidebar-subtitle-purple:        #5a283d !default;
 $sidebar-background-orange:      #ff8f5e !default;
 $sidebar-font-orange:            #772510 !default;
 $sidebar-subtitle-orange:        #e95e37 !default;
+
+//Font Size:
+$font8: 8px;
+$font10: 10px;
+$font12: 12px;
+$font14: 14px;
+$font16: 16px;
+$font18: 18px;
+$font20: 20px;
+$font24: 24px;
+$font26: 26px;
+$font28: 28px;
+$font30: 30px;
+$font34: 34px;
+
+//Line Height:
+$line10: 10px;
+$line14: 14px;
+$line16: 16px;
+$line18: 18px;
+$line20: 20px;
+$line22: 22px;
+$line24: 24px;
+$line26: 26px;
+$line28: 28px;
+$line34: 34px;
+$line40: 40px;
+
+//Font Wheight
+$font-light: 300;
+$font-regular: 400;
+$font-semibold: 600;
+$font-bold: 700;
+
+//Spaces
+$space5: 5px;
+$space10: 10px;
+$space15: 15px;
+$space20: 20px;
+$space25: 25px;
+$space30: 30px;
+$space35: 35px;
+$space40: 40px;
+$space45: 45px;
+$space50: 50px;
+$space55: 55px;
+$space60: 60px;
+$space65: 65px;
+$space70: 70px;
+$space75: 75px;
+$space80: 80px;
+$space85: 85px;
+$space90: 90px;
+
+//Transitions
+$trans1: .1s;
+$trans2: .2s;
+$trans3: .3s;
+$trans4: .4s;
+$trans5: .5s;
+$trans6: .6s;
+
+//Navbar
+$navbar-height: 84px;
+$navbar-height-mobile: 70px;
+$footer-height: 368px;
+$form-message-height: 45px;
+
+$screen-xs-min: 480px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+$screen-xl-min: 1800px !default;
+
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;

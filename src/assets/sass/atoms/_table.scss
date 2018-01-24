@@ -1,5 +1,5 @@
 .whst-table {
-    $table-height: 40px;
+    $table-height: 20px;
     $border: 1px;
     $actions-position: 2px;
     $table-padding: 10px;
@@ -16,17 +16,17 @@
     }
 
     .datatable-header {
-        @include padding(null $table-padding);
-
+        font-size: 1.25em;
+        font-weight: 300;         
+        // @include padding(null $table-padding);
         border-bottom: $border solid $light-gray;
-        font-weight: $font-bold;
     }
 
     .datatable-body-row {
         border-bottom: $border solid $light-gray;
 
         &.datatable-row-odd {
-            background-color: $dark-gray;
+            background-color: $pale-bg;
         }
 
         .datatable-body-cell {
@@ -41,12 +41,14 @@
         }
 
         .datatable-row-center {
-            @include padding(null $table-padding);
+            // @include padding(null $table-padding);
+            padding: null $table-padding;
         }
     }
 
     .datatable-footer {
-        @include margin($space10 null null);
+        // @include margin($space10 null null);
+        margin: $space10 null null;
 
         .datatable-footer-inner {
             .datatable-pager {
@@ -61,8 +63,8 @@
 
     .pager {
         li {
-            @include font-size($font10, $line14);
-
+            // @include font-size($font10, $line14);
+            font-size: $font10, $line14;
             &:first-child {
                 a {
                     border-top-left-radius: $border-radius;
@@ -94,17 +96,18 @@
             }
 
             > a {
-                @include margin(null null null (-$border));
-                @include padding($pagination-padding);
-
+                // @include margin(null null null (-$border));
+                // @include padding($pagination-padding);
+                margin: null null null (-$border);
+                padding: $pagination-padding;
                 float: left;
-                transition: opacity $trans3, background-color $trans3;
+                transition: opacity .3s, background-color .3s;
                 border-radius: 0;
             }
         }
 
         .datatable-icon-prev {
-            @extend %table-icon-properties;
+            letter-spacing: -2px;
 
             &::before {
                 content: "<<";
@@ -112,7 +115,7 @@
         }
 
         .datatable-icon-left {
-            @extend %table-icon-properties;
+            letter-spacing: -2px;
 
             &::before {
                 content: "<";
@@ -120,7 +123,7 @@
         }
 
         .datatable-icon-right {
-            @extend %table-icon-properties;
+            letter-spacing: -2px;
 
             &::before {
                 content: ">";
@@ -128,7 +131,7 @@
         }
 
         .datatable-icon-skip {
-            @extend %table-icon-properties;
+            letter-spacing: -2px;
 
             &::before {
                 content: ">>";
@@ -138,7 +141,8 @@
 
     .table-actions {
         @include font-size(0, null);
-        @include position(relative, -$actions-position null null);
+        // @include position(relative, -$actions-position null null);
+        position:( relative, -$actions-position null null );
     }
 
     .empty-row {
