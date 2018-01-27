@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { DatatableComponent } from '@swimlane/ngx-datatable';
 import { RefereeModel } from 'app/referee/model/referee.model';
 import { RefereeService } from './service/referee.service';
@@ -13,7 +13,7 @@ declare interface TableData {
 
 @Component({
     selector: 'table-cmp',
-    templateUrl: 'referee.component.html'
+    templateUrl: 'referee.component.html',
 })
 
 export class RefereeComponent implements OnInit {
@@ -26,8 +26,7 @@ export class RefereeComponent implements OnInit {
     private updateListSubject = new Subject();
 
     constructor (
-        private refereeService: RefereeService,
-        // private alertService: AlertsService
+        private refereeService: RefereeService
     ) {}
 
     ngOnInit() {
@@ -55,5 +54,13 @@ export class RefereeComponent implements OnInit {
             this.originalReferees
         );
     }
+
+    deleteReferee(id) {
+        this.refereeService.delete(id)
+    }
+
+
 }
+
+
 

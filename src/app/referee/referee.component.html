@@ -68,7 +68,6 @@
                             </ngx-datatable-column>
                             <ngx-datatable-column prop="id" sortable=false>
                                 <ng-template ngx-datatable-header-template>
-                                    Eliminar
                                 </ng-template>
                                 <ng-template let-value="value" ngx-datatable-cell-template>
                                     <!-- <div class="table-actions">
@@ -80,7 +79,7 @@
                                         </a> -->
                                         <button
                                             class="btn btn-xs btn-default"
-                                            
+                                            on-click="deleteReferee(value)"
                                         >
                                             Eliminar
                                         </button>

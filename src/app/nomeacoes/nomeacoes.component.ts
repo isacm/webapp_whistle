@@ -28,8 +28,7 @@ export class NomeacoesComponent implements OnInit {
     public refereesNames: Array<String> = [];
     public originalReferees: Array<RefereeModel> = [];
     private updateListSubject = new Subject();
-    private gravarNoivos: TableData;
-
+    private map: Map<String, Array<String>>;
     constructor (
         private nomeacoesService: NomeacoesService,
         private refereeService: RefereeService
@@ -77,6 +76,11 @@ export class NomeacoesComponent implements OnInit {
 
 
 
+  }
+
+  nomeia(idJogo , idArb) {
+      console.log(idJogo, idArb);
+      console.log(this.map.get(idJogo))
   }
 
   preenche() {

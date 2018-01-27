@@ -1,0 +1,28 @@
+<div class="aoc-modal -modal-xs">
+        <div class="modal-header -border aoc-visible-block-xs">
+            <h2 class="aoc-h3">Confirmation</h2>
+        </div>
+        <aoc-button-modal-close
+            class="modal-close -padded aoc-visible-block-xs"
+            (buttonClicked)="onCloseModal()"
+        ></aoc-button-modal-close>
+        <div class="aoc-block modal-header -centered-xs">
+            <h3 class="aoc-h3">Are you sure?</h3>
+        </div>
+        <div class="aoc-block modal-footer">
+            <aoc-button
+                class="aoc-inline-block action"
+                type="-primary"
+                label="No"
+                [btnType]="'button'"
+                (buttonClicked)="onCloseModal()"
+            ></aoc-button>
+            <aoc-button
+                class="aoc-inline-block action"
+                label="Yes"
+                type="-secondary"
+                (buttonClicked)="onAccept()"
+            ></aoc-button>
+        </div>
+    </div>
+    

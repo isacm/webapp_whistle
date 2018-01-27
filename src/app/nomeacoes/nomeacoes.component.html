@@ -22,7 +22,9 @@
                                                 [multiple]="true"
                                                 [allowClear]="true"
                                                 [items]="refereesNames"
+                                                (nomeia)="nomeia(row[1],$event)"
                                                 placeholder="Nenhum árbitro selecionado">
+                                                
                                             </ng-select>
                                         </div>
                                 </td>
