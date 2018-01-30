@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { AppComponent } from 'app/app.component';
 import { UserService } from 'app/login/user.service';
+import { IsAuthenticatedService } from 'app/login/is-authenticated.service';
 
 
 
@@ -14,7 +15,10 @@ import { UserService } from 'app/login/user.service';
 
 export class LoginComponent implements OnInit {
 
-    constructor(private router:Router, private user:UserService){
+    model: any = {};
+    inc = false;
+
+    constructor(private router:Router, private user:UserService, private isAuthenticated:IsAuthenticatedService){
 
     }
 
@@ -25,15 +29,48 @@ export class LoginComponent implements OnInit {
     loginUser(e){
         e.preventDefault();
         
-        let user = e.target.elements[0].value;
-        let pw = e.target.elements[1].value;
-        console.log(user,pw)
+        let email = e.target.elements[0].value;
+        let pass = e.target.elements[1].value;
+        console.log(email,pass)
 
-        if(user=="admin" && pw=="admin"){
-            this.user.setUserLoggedIn();
-            this.router.navigate(['dashboard']);
+        // if(user=="admin" && pw=="admin"){
+        //     this.user.setUserLoggedIn();
+        //     this.router.navigate(['dashboard']);
+        // }
+
+        let lg = this.isAuthenticated.login(email, pass);
+        if(lg==false) {
+            console.log("falhou")
+            this.inc = true;
         }
+        else{this.router.navigate(['dashboard']);}
+        
 
+    }
+
+    onLoggedin(email,pass) {
+        //console.log('Login crl');
+        //console.log(email+'---'+pass)
+        /*this.isauthenticationService.login(this.model.email, this.model.password)
+        .subscribe(
+              resultado => {
+                  this.utilizadorOn();
+                  this.router.navigate(['/']);
+              },
+              error => {
+                  this.alertService.error("Email ou Password incorretos!");
+                  this.loading = false;
+              }
+          );*/
+
+          
+          let lg = this.isAuthenticated.login(email, pass);
+          if(lg==false) {
+                console.log("falhou")
+                this.inc = true;
+          }
+          
+          this.router.navigate(['']);
     }
     
 }

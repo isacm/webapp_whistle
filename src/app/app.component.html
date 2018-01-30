@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div *ngIf="this.user.getUserLoggedIn(); else elseBlock">
+    <div *ngIf="this.isAuthenticated.getLoginStatus(); else elseBlock">
         <div class="sidebar" data-background-color="white" data-active-color="danger">
             <sidebar-cmp></sidebar-cmp>
         </div>
