@@ -6,6 +6,8 @@ import { RefereeModel } from 'app/referee/model/referee.model';
 import { RefereeService } from 'app/referee/service/referee.service';
 // import { SelectModule } from 'ng2-select';
 import {NgSelectModule} from '@ng-select/ng-select'
+import { SelectModule } from 'ng2-select';
+import { UserService } from 'app/login/user.service';
 
 declare interface TableData {
     headerRow: string[];
@@ -32,7 +34,8 @@ export class NomeacoesComponent implements OnInit {
     private map: Map<string, Array<String>>;
     constructor (
         private nomeacoesService: NomeacoesService,
-        private refereeService: RefereeService
+        private refereeService: RefereeService,
+        private user:UserService
     ) {}
 
     ngOnInit() {
