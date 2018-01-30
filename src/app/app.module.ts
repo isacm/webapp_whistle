@@ -23,12 +23,15 @@ import { HttpModule } from '@angular/http'
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TextMaskModule } from 'angular2-text-mask';
 import { InputComponent } from './ui/input/input.component';
+import { LoginComponent } from './login/login.component';
 
 import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
 import { RefereeService } from './referee/service/referee.service';
 import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
+import { UserService } from './login/user.service';
 import { SelectModule } from 'ng2-select';
+import { AuthguardGuard } from 'app/authguard.guard';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { SelectModule } from 'ng2-select';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent
+    UpgradeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,8 @@ import { SelectModule } from 'ng2-select';
     ApiUrlsService,
     RefereeService,
     NomeacoesService,
-    
+    UserService,
+    AuthguardGuard
   ],
   bootstrap: [AppComponent]
 })

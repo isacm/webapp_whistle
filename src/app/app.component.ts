@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'app/login/user.service';
 
 declare var $:any;
 
@@ -8,4 +9,11 @@ declare var $:any;
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {}
+export class AppComponent {
+
+  constructor(private user:UserService) { 
+
+  }
+
+
+}

@@ -2,11 +2,14 @@ import { Component, OnInit, Renderer, ViewChild, ElementRef } from '@angular/cor
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { UserService } from 'app/login/user.service';
+import { Route } from '@angular/router/src/config';
 
 @Component({
     moduleId: module.id,
     selector: 'navbar-cmp',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
+    styleUrls: ['navbar.component.scss']
 })
 
 export class NavbarComponent implements OnInit{
@@ -18,7 +21,7 @@ export class NavbarComponent implements OnInit{
 
     @ViewChild("navbar-cmp") button;
 
-    constructor(location:Location, private renderer : Renderer, private element : ElementRef) {
+    constructor(location:Location, private renderer : Renderer, private element : ElementRef,private user:UserService, private router:Router) {
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
@@ -54,5 +57,11 @@ export class NavbarComponent implements OnInit{
             this.sidebarVisible = false;
             body.classList.remove('nav-open');
         }
+    }
+
+    logout(){
+        console.log("wele")
+        this.user.setUserLoggedOut();
+        this.router.navigate(['login']);
     }
 }
