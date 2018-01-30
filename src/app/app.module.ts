@@ -33,7 +33,6 @@ import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
 // import { SelectModule } from 'ng2-select';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { UserService } from './login/user.service';
-import { SelectModule } from 'ng2-select';
 import { AuthguardGuard } from 'app/authguard.guard';
 
 
@@ -73,12 +72,8 @@ import { AuthguardGuard } from 'app/authguard.guard';
     ApiUrlsService,
     RefereeService,
     NomeacoesService,
-<<<<<<< HEAD
-
-=======
     UserService,
     AuthguardGuard
->>>>>>> 65d1a241e195b4879d0fadb575cdc9e622d53205
   ],
   bootstrap: [AppComponent]
 })
