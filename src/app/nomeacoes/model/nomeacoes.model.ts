@@ -6,7 +6,8 @@ export class NomeacoesModel {
     date: Date;
     home_teamId: string;
     guest_teamId: string;
-    referee_id: string;
+    refArray: Array<string>;
+    isNomeado: boolean;
 
     static deserialize(jsonObject: Object): NomeacoesModel {
         if ((jsonObject === undefined || jsonObject === null)) {
@@ -27,8 +28,7 @@ export class NomeacoesModel {
         return new FormGroup({
             date: new FormControl( '', Validators.required),
             home_teamId: new FormControl( '', Validators.required),
-            guest_teamId: new FormControl( '', Validators.required),
-            referee_id: new FormControl( '', Validators.required)
+            guest_teamId: new FormControl( '', Validators.required)
         });
     }
 
@@ -37,7 +37,8 @@ export class NomeacoesModel {
             date: this.date,
             home_teamId: this.home_teamId,
             guest_teamId: this.guest_teamId,
-            referee_id: this.referee_id
+            refArray: this.refArray,
+            isNomeado: this.isNomeado
         }
     }
 }

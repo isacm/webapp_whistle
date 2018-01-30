@@ -29,6 +29,7 @@
         .control-label {
             // @include padding(0 null null);
             // @include margin(null null $space5);
+            margin-left: 15px;
             padding:(0 null null);
             margin:(null null $space5);
             width: auto;

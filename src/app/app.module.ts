@@ -23,18 +23,21 @@ import { HttpModule } from '@angular/http'
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { TextMaskModule } from 'angular2-text-mask';
 import { InputComponent } from './ui/input/input.component';
+import { InputNomeComponent } from './ui/input-nome/input_nome.component';
 
 import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
 import { RefereeService } from './referee/service/referee.service';
 import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
-import { SelectModule } from 'ng2-select';
+// import { SelectModule } from 'ng2-select';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     InputComponent,
+    InputNomeComponent,
     PerfilComponent,
     RefereeComponent,
     NomeacoesComponent,
@@ -55,7 +58,7 @@ import { SelectModule } from 'ng2-select';
     FixedPluginModule,
     ReactiveFormsModule,
     TextMaskModule,
-    SelectModule,
+    NgSelectModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY'})
 
   ],
@@ -64,7 +67,7 @@ import { SelectModule } from 'ng2-select';
     ApiUrlsService,
     RefereeService,
     NomeacoesService,
-    
+
   ],
   bootstrap: [AppComponent]
 })

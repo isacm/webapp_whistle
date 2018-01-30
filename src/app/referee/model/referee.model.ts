@@ -6,10 +6,12 @@ export class RefereeModel {
     name: string;
     dateOfBirth: string;
     address: string;
-    nib: number;
     email: string;
     category: string;
     phoneNumber: string;
+    city: string;
+    entryDate: string;
+    password: string;
 
     static deserialize (jsonObject: any): RefereeModel {
         const instance = new RefereeModel();
@@ -21,27 +23,15 @@ export class RefereeModel {
         return instance;
     }
 
-    static createForm (): FormGroup {
-        return new FormGroup({
-            name: new FormControl( '', Validators.required),
-            phoneNumber: new FormControl('', Validators.required, <any>Validators.pattern('[+][0-9 \\-()]*')),
-            dateOfBirth: new FormControl('', Validators.required),
-            address: new FormControl( '', Validators.required),
-            nib: new FormControl( '', Validators.required, <any>Validators.pattern(/^[0-9]{21}$/)),
-            email: new FormControl('', Validators.required,
-            <any>Validators.pattern(/^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?\.[a-z0-9]([a-z0-9-]*[a-z0-9])?$/i)),
-            category: new FormControl('', Validators.required)
-        });
-    }
-
     getEditObject () {
         return {
             name: this.name,
             dateOfBirth: this.dateOfBirth,
             address: this.address,
-            nib: this.nib,
+            city: this.city,
             email: this.email,
-            category: this.category
+            category: this.category,
+            password: this.password
         }
     }
 

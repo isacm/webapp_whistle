@@ -19,16 +19,19 @@
                                     <div *ngIf="i!=4"> {{cell}} </div>
                                     <div *ngIf="i===4">
                                             <ng-select
-                                                [multiple]="true"
-                                                [allowClear]="true"
+                                                multiple="true"
                                                 [items]="refereesNames"
-                                                (nomeia)="nomeia(row[1],$event)"
-                                                placeholder="Nenhum árbitro selecionado">
-                                                
+                                                (add)="nomeia(row[0],$event)"
+                                                (remove)="delete(row[0],$event)"
+                                                placeholder="Nenhum árbitro selecionado">    
                                             </ng-select>
                                         </div>
                                 </td>
                             </tr>
+                            <br>
+                            <div class="text-center">
+                                    <button type="submit" class="btn btn-info btn-fill btn-wd" (click)="save()">Guardar</button>
+                            </div>
                             
 
                         </tbody>
