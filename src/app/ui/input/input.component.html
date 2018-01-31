@@ -1,12 +1,12 @@
 <div
-    class="m-b-none"
+    class="row m-b-none"
     [formGroup]="group"    
 >
-    <label class="col-sm-3 control-label" [attr.for]="name">
+    <div class="col-sm-3 mts" [attr.for]="name">
         {{ label }}        
-    </label>
+    </div>
 
-    <div class="col-xs-12 col-sm-9 input-field">
+    <div class="col-sm-9 input-field">
         <input
             class="form-control"
             [attr.id]="name"

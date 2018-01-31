@@ -4,6 +4,8 @@ import { refereeForm } from 'app/referee/forms/referee.form';
 import { FormHelper } from 'app/utils/form/form.helper';
 import { Subject, Observable } from 'rxjs';
 import * as moment from 'moment';
+import { NomeacoesModel } from 'app/nomeacoes/model/nomeacoes.model';
+import { NomeacoesService } from 'app/nomeacoes/service/nomeacoes.service';
 
 @Component({
     selector: 'user-cmp',
@@ -13,11 +15,23 @@ import * as moment from 'moment';
 
 export class PerfilComponent implements OnInit {
     public newRefereeForm = refereeForm();
+    public nomeacoes: Array<NomeacoesModel> = [];
+    public originalNomeacoes: Array<NomeacoesModel> = [];
+    public count = 0;
+    private updateListSubject = new Subject();
 
     constructor (
+        private nomeacoesService: NomeacoesService,
         private refereeService: RefereeService
         ) {}
     ngOnInit() {
+        this.updateListSubject
+            .startWith(null)
+            .flatMap(() => this.nomeacoesService.getAll())
+            .do(nomeacoes => this.originalNomeacoes =  [...nomeacoes ])
+            .do(nomeacoes => this.nomeacoes = nomeacoes.filter(a => !a.isNomeado))
+            .subscribe(() => this.count = this.nomeacoes.length)
+        ;
     }
 
     criarUser(values, valid) {

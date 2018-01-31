@@ -5,6 +5,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { RefereeComponent } from './referee/referee.component';
 import { LoginComponent } from './login/login.component';
 import { NomeacoesComponent } from './nomeacoes/nomeacoes.component';
+import { NomeadosComponent } from './nomeados/nomeados.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -37,6 +38,10 @@ export const AppRoutes: Routes = [
     {
         path: 'nomeacoes',
         component: NomeacoesComponent
+    },
+    {
+        path: 'nomeados',
+        component: NomeadosComponent
     },
     {
         path: 'icons',

@@ -3,7 +3,8 @@ import { FormControl, FormGroup, Validators, } from '@angular/forms';
 
 export class NomeacoesModel {
     id: string;
-    date: Date;
+    date: string;
+    hora: string;
     home_teamId: string;
     guest_teamId: string;
     refArray: Array<string>;
@@ -13,15 +14,16 @@ export class NomeacoesModel {
         if ((jsonObject === undefined || jsonObject === null)) {
             return undefined;
         }
+        const instance = new NomeacoesModel();
 
-        const mapProps = {
-            date: Hydrator.date
-        };
+        // const mapProps = {
+        //     date: Hydrator.date
+        // };
+        Object.keys(jsonObject).forEach(prop =>
+            instance[prop] = jsonObject[prop]
+        );
 
-        return Object
-            .keys(jsonObject)
-            .reduce(Hydrator.assign(jsonObject, mapProps), new NomeacoesModel())
-        ;
+        return instance;
     }
 
     static createForm (): FormGroup {

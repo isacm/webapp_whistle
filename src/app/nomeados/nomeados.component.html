@@ -1,4 +1,4 @@
-    <div class="container-fluid">
+<div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -15,26 +15,12 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let row of tableData1.dataRows">
-                                <td *ngFor="let cell of row; let i = index">
-                                    <div *ngIf="i!=5"> {{cell}} </div>
-                                    <div *ngIf="i===5">
-                                            <ng-select
-                                                multiple="true"
-                                                [items]="refereesNames"
-                                                (add)="nomeia(row[0],$event)"
-                                                (remove)="delete(row[0],$event)"
-                                                placeholder="Nenhum árbitro selecionado">    
-                                            </ng-select>
-                                        </div>
+                                <td *ngFor="let cell of row">
+                                     {{cell}}                                     
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
-                    <div *ngIf="nomeacoes.length">
-                        <div class="text-center mt">
-                                <button type="submit" class="btn btn-info btn-fill btn-wd" (click)="save()">Guardar</button>
-                        </div>
-                    </div>
+                    </table>                    
                     </div>
                     <!--<div class="content">
 

@@ -25,6 +25,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { InputComponent } from './ui/input/input.component';
 import { InputNomeComponent } from './ui/input-nome/input_nome.component';
 import { LoginComponent } from './login/login.component';
+import { NomeadosComponent } from './nomeados/nomeados.component';
 
 import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
@@ -34,7 +35,6 @@ import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { UserService } from './login/user.service';
 import { AuthguardGuard } from 'app/authguard.guard';
-
 
 @NgModule({
   declarations: [
@@ -49,6 +49,7 @@ import { AuthguardGuard } from 'app/authguard.guard';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    NomeadosComponent,
     LoginComponent
   ],
   imports: [

@@ -1,5 +1,5 @@
-<div class="wrapper">
-    <div *ngIf="this.user.getUserLoggedIn(); else elseBlock">
+<div *ngIf="this.user.getUserLoggedIn(); else elseBlock">
+    <div class="wrapper">
         <div class="sidebar" data-background-color="white" data-active-color="danger">
             <sidebar-cmp></sidebar-cmp>
         </div>
@@ -11,10 +11,9 @@
             <footer-cmp></footer-cmp>
         </div>
     </div>
-    <ng-template #elseBlock>
-        <login-cmp></login-cmp>
-    </ng-template>
-    
-    
 </div>
+<ng-template #elseBlock>
+    <login-cmp></login-cmp>
+</ng-template>
+
 <fixedplugin-cmp></fixedplugin-cmp>
