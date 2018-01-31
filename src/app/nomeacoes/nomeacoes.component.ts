@@ -3,7 +3,9 @@ import { NomeacoesModel } from 'app/nomeacoes/model/nomeacoes.model';
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { NomeacoesService } from './service/nomeacoes.service';
+import { DesignacoesService } from 'app/designacoes/service/designacoes.service';
 import { RefereeModel } from 'app/referee/model/referee.model';
+import { DesignacoesModel } from 'app/designacoes/model/designacoes.model';
 import { RefereeService } from 'app/referee/service/referee.service';
 // import { SelectModule } from 'ng2-select';
 import { NgSelectModule } from '@ng-select/ng-select'
@@ -39,6 +41,7 @@ export class NomeacoesComponent implements OnInit {
         private router: Router,
         private nomeacoesService: NomeacoesService,
         private refereeService: RefereeService,
+        private designacaoService: DesignacoesService,
         private user: UserService
     ) {}
 
@@ -107,6 +110,12 @@ export class NomeacoesComponent implements OnInit {
       for (let key of Array.from( this.map.keys()) ) {
           this.nomeacoesService.update(key, { refArray: this.arrayId(this.map.get(key))});
           this.nomeacoesService.update(key, { isNomeado: true });
+          for (let ac of this.arrayId(this.map.get(key))) {
+            const desig = new DesignacoesModel();
+            desig.refereeId = ac;
+            desig.gameId = key;
+            this.designacaoService.create(desig);
+          }
       }
       this.router.navigate(['/nomeados']);
   }

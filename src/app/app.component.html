@@ -1,4 +1,4 @@
-<div *ngIf="this.user.getUserLoggedIn(); else elseBlock">
+<div *ngIf="this.isAuthenticated.getLoginStatus(); else elseBlock">
     <div class="wrapper">
         <div class="sidebar" data-background-color="white" data-active-color="danger">
             <sidebar-cmp></sidebar-cmp>
@@ -13,7 +13,9 @@
     </div>
 </div>
 <ng-template #elseBlock>
-    <login-cmp></login-cmp>
+    <div class="wrapper">
+        <login-cmp></login-cmp>
+    </div>
 </ng-template>
 
 <fixedplugin-cmp></fixedplugin-cmp>

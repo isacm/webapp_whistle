@@ -31,6 +31,7 @@ import { HTTPService } from './utils/http/http.service';
 import { ApiUrlsService } from './utils/api-urls/api-urls.service';
 import { RefereeService } from './referee/service/referee.service';
 import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
+import { DesignacoesService } from './designacoes/service/designacoes.service';
 // import { SelectModule } from 'ng2-select';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { UserService } from './login/user.service';
@@ -72,6 +73,7 @@ import { IsAuthenticatedService } from 'app/login/is-authenticated.service';
   providers: [
     HTTPService,
     ApiUrlsService,
+    DesignacoesService,
     RefereeService,
     NomeacoesService,
     UserService,

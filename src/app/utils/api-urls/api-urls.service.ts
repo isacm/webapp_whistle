@@ -42,4 +42,22 @@ export class ApiUrlsService {
         ),
     }
 
+    public DESIGNATION: any = {
+        getAll: (sort?: string): string => (
+            `${ ApiUrlsService.API_URL }/Designations?${sort ? 'sort=' + sort : ''}`
+        ),
+        getOne: (id: string): string => (
+            `${ ApiUrlsService.API_URL }/Designations/${id}`
+        ),
+        create: (): string => (
+            `${ ApiUrlsService.API_URL }/Designations`
+        ),
+        update: (id): string => (
+            `${ ApiUrlsService.API_URL }/Designations/${id}`
+        ),
+        delete: (id): string => (
+            `${ ApiUrlsService.API_URL }/Designations/${id}`
+        ),
+    }
+
 }
