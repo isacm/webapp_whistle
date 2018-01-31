@@ -35,6 +35,7 @@ import { NomeacoesService } from './nomeacoes/service/nomeacoes.service';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { UserService } from './login/user.service';
 import { AuthguardGuard } from 'app/authguard.guard';
+import { IsAuthenticatedService } from 'app/login/is-authenticated.service';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { AuthguardGuard } from 'app/authguard.guard';
     RefereeService,
     NomeacoesService,
     UserService,
-    AuthguardGuard
+    AuthguardGuard,
+    IsAuthenticatedService
   ],
   bootstrap: [AppComponent]
 })

@@ -60,8 +60,9 @@ export class NavbarComponent implements OnInit{
     }
 
     logout(){
-        console.log("wele")
-        this.user.setUserLoggedOut();
+        //console.log("wele")
+        //this.user.setUserLoggedOut();
         this.router.navigate(['login']);
+        localStorage.removeItem('currentUser');
     }
 }

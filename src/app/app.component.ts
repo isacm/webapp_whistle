@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from 'app/login/user.service';
+import { IsAuthenticatedService } from 'app/login/is-authenticated.service';
 
 declare var $:any;
 
@@ -11,7 +12,7 @@ declare var $:any;
 
 export class AppComponent {
 
-  constructor(private user:UserService) { 
+  constructor(private user:UserService, private isAuthenticated:IsAuthenticatedService) { 
 
   }
 

@@ -17,8 +17,14 @@
             </div>
             <br>
             <div class="input text-center">
+                    <div *ngIf="inc">
+                            <strong>ERRO!<br></strong> Email ou password incorretos!<br>
+                    <br>
+                        </div>
                 <input type="submit" value="Login">
+                
             </div>
+            
         </form>
     </div>
 </div>
