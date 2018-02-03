@@ -1,16 +1,15 @@
-# webapp_whistle
-PEI 2017
+# Whistle WebApp
+## Environment setup 
 
+#### Do this only on the first run
 ```
-On the first run
 $ npm install
-
 ```
-## Run Commands
 
+## Run Commands
 ```
 $ npm start
 
-Open http://localhost:4200
+$ open http://localhost:4200
 
 ```
