@@ -47,5 +47,6 @@ export class PerfilComponent implements OnInit {
         console.log('entrei214214214');
 
        this.refereeService.create(values);
+       this.refereeService.mail(values);
     }
 }

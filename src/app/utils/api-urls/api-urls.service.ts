@@ -22,6 +22,9 @@ export class ApiUrlsService {
         delete: (id): string => (
             `${ ApiUrlsService.API_URL }/Referees/${id}`
         ),
+        mail: () => (
+            `${ ApiUrlsService.API_URL }/Referees/mail`
+        ),
     }
 
     public GAME: any = {

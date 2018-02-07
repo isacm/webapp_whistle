@@ -86,4 +86,10 @@ export class RefereeService {
             .then(referee => RefereeModel.deserialize(referee))
             ;
     }
+
+    mail (payload: RefereeModel): Promise<any> {
+        return this.httpService.post(this.apiUrlsService.REFEREE.mail(), payload)
+            .then(referee => RefereeModel.deserialize(referee))
+            ;
+    }
 }
